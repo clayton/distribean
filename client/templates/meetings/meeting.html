@@ -1,0 +1,57 @@
+<template name="meeting">
+  {{#with meeting}}
+    <div class="container meeting">
+      <div class="row">
+        <div class="col-md-12">
+          <pre>Share This Meeting: <a href="{{urlFor 'meeting' meeting}}">{{urlFor 'meeting' meeting}}</a></pre>
+          {{log}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="text-center">To Discuss</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <form class="form" action="#">
+                    <div class="input-group">
+                      <input type="text" placeholder="New Item..." class="form-control input">
+                      <div class="input-group-btn">
+                        <button class="btn btn-success"><span class="fa fa-plus-circle"></span></button>
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                </div>
+              </div>
+              {{> toDoTopics}}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="text-center">Discussing</h3>
+            </div>
+            <div class="panel-body">
+              {{> doingTopic }}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="text-center">Discussed</h3>
+            </div>
+            <div class="panel-body">
+              {{> doneTopics }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</template>
