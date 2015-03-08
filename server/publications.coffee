@@ -7,5 +7,7 @@
 # Meteor.publish 'doneTopics', ->
 #   return Topics.find({state:"done"})
 
-Meteor.publish 'meetings', ->
-  return Meetings.find()
+Meteor.publish 'current_meeting', (meetingId) ->
+  check(meetingId, String);
+
+  return Meetings.find({_id: meetingId})
