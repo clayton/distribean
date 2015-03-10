@@ -1,7 +1,18 @@
 <template name="doneTopic">
-  <div class="row">
+  <div class="row topic-container">
     <div class="col-md-12">
-      <div class="well item">{{text}}</div>
+      <div class="panel panel-default item">
+        <div class="panel-body">
+          <h4 class="text-muted">{{text}}</h4>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-10">
+              <p>Votes: {{votes}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

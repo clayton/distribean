@@ -5,6 +5,10 @@ Template.meeting.helpers
       return -topic.votes
     return _.extend(meeting, {sortedToDoTopics: sortedToDoTopics})
 
+  topicsToDiscuss: (topics) ->
+    console.log(topics.length)
+    return topics.length > 0
+
 Template.meeting.events
   'submit form.new-topic': (evt) ->
     evt.preventDefault()

@@ -39,7 +39,13 @@
               <h3 class="text-center">Discussing</h3>
             </div>
             <div class="panel-body">
-              {{> doingTopic }}
+              {{#if doingTopic}}
+                {{> doingTopic }}
+              {{else}}
+                {{#if topicsToDiscuss sortedToDoTopics}}
+                  {{> nextTopic}}
+                {{/if}}
+              {{/if}}
             </div>
           </div>
         </div>
@@ -49,7 +55,9 @@
               <h3 class="text-center">Discussed</h3>
             </div>
             <div class="panel-body">
-              {{> doneTopics }}
+              {{#each doneTopics}}
+                {{> doneTopic}}
+              {{/each}}
             </div>
           </div>
         </div>

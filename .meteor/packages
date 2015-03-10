@@ -11,3 +11,4 @@ coffeescript
 fortawesome:fontawesome
 iron:router
 sacha:spin
+mrt:moment

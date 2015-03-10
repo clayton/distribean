@@ -18,3 +18,17 @@ Meteor.methods
       return Meetings.update { 'toDoTopics.id': topic },
               '$pull': 'toDoTopics.$.votedBy': currentUser
               '$inc': 'toDoTopics.$.votes': increment_by
+
+  popTopicToDiscuss: (id) ->
+    meeting = Meetings.findOne(id)
+    if meeting.toDoTopics.size > 0
+      topTopic = meeting.toDoTopics[0]
+      Meetings.update {_id: meeting._id}, $pull: toDoTopics: {id: topTopic.id}
+      return Meetings.update {_id: id}, "$set": doingTopic: topTopic
+    else
+      return Meetings.update {_id: id}, "$set": doingTopic: null
+
+  moveToDone: (id) ->
+    meeting = Meetings.findOne(id)
+    finishedTopic = meeting.doingTopic
+    return Meetings.update {_id: meeting._id}, $push: doneTopics: finishedTopic

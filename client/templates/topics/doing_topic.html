@@ -1,9 +1,24 @@
 <template name="doingTopic">
-  {{#if text}}
+  {{#with doingTopic}}
     <div class="row">
       <div class="col-md-12">
-        <div class="well item well-info">{{text}}</div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h4>{{text}}</h4>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-md-8">
+                <a href="#5min" class="btn btn-default five-minutes"><span class="fa fa-clock-o"></span>&nbsp;<span class="clock">5:00</span></a>
+                <a href="#2min" class="btn btn-default two-minutes"><span class="fa fa-clock-o"></span>&nbsp;<span class="clock">2:00</span></a>
+              </div>
+              <div class="col-md-4">
+                <a href="#nextTopic" data-topic="{{id}}" class="btn btn-danger btn-block next-topic">Done</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  {{/if}}
+  {{/with}}
 </template>
