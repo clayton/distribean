@@ -21,7 +21,7 @@ Meteor.methods
 
   popTopicToDiscuss: (id) ->
     meeting = Meetings.findOne(id)
-    if meeting.toDoTopics.size > 0
+    if meeting.toDoTopics.length > 0
       topTopic = meeting.toDoTopics[0]
       Meetings.update {_id: meeting._id}, $pull: toDoTopics: {id: topTopic.id}
       return Meetings.update {_id: id}, "$set": doingTopic: topTopic

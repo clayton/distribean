@@ -6,7 +6,6 @@ Template.meeting.helpers
     return _.extend(meeting, {sortedToDoTopics: sortedToDoTopics})
 
   topicsToDiscuss: (topics) ->
-    console.log(topics.length)
     return topics.length > 0
 
 Template.meeting.events
