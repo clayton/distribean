@@ -2,19 +2,19 @@
   {{#with meeting}}
     <div class="container meeting" id="{{_id}}">
       <div class="row">
-        <div class="col-md-12">
-          <pre>Share This Meeting: <a href="{{urlFor 'meeting' meeting}}">{{urlFor 'meeting' meeting}}</a></pre>
+        <div class="col-xs-12">
+          <p class="alert alert-info">Share This Meeting: <a href="{{urlFor 'meeting' meeting}}">{{urlFor 'meeting' meeting}}</a></p>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="text-center">To Discuss</h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-xs-12">
                   <form class="form new-topic">
                     <div class="input-group">
                       <input type="hidden" name="_id" value="{{_id}}">
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
           <div class="panel panel-success">
             <div class="panel-heading">
               <h3 class="text-center">Discussing</h3>
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-12">
           <div class="panel panel-warning">
             <div class="panel-heading">
               <h3 class="text-center">Discussed</h3>
