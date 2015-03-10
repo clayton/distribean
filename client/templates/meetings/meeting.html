@@ -1,10 +1,9 @@
 <template name="meeting">
   {{#with meeting}}
-    <div class="container meeting">
+    <div class="container meeting" id="{{_id}}">
       <div class="row">
         <div class="col-md-12">
           <pre>Share This Meeting: <a href="{{urlFor 'meeting' meeting}}">{{urlFor 'meeting' meeting}}</a></pre>
-          {{log}}
         </div>
       </div>
       <div class="row">
@@ -16,9 +15,10 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">
-                  <form class="form" action="#">
+                  <form class="form new-topic">
                     <div class="input-group">
-                      <input type="text" placeholder="New Item..." class="form-control input">
+                      <input type="hidden" name="_id" value="{{_id}}">
+                      <input name="text" type="text" placeholder="New Item..." class="form-control input">
                       <div class="input-group-btn">
                         <button class="btn btn-success"><span class="fa fa-plus-circle"></span></button>
                       </div>
@@ -27,7 +27,9 @@
                   <br>
                 </div>
               </div>
-              {{> toDoTopics}}
+              {{#each sortedToDoTopics}}
+                {{> toDoTopic}}
+              {{/each}}
             </div>
           </div>
         </div>

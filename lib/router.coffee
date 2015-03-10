@@ -10,6 +10,6 @@ Router.route '/meetings/:_id',
   waitOn: ->
     Meteor.subscribe('current_meeting', @params._id)
   data: ->
-    return meeting: Meetings.findOne(@params._id)
+    return _id: @params._id
 
 # Router.onBeforeAction 'dataNotFound', only: 'meetingPage'

@@ -1,7 +1,23 @@
 <template name="toDoTopic">
-  <div class="row">
+  <div class="row topic-container">
     <div class="col-md-12">
-      <div class="well item">{{text}}&nbsp;<span class="fa fa-trash"></span></div>
+      <div class="panel panel-default item">
+        <div class="panel-body">
+          <h4>
+            ({{votes}}) {{text}}
+          </h4>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-md-6">
+              <a href="#like" class="like-topic btn btn-sm btn-default {{#if currentUserLiked}} btn-info {{/if}}" data-topic="{{id}}"><span class="fa fa-thumbs-up"></span></a>
+            </div>
+            <div class="col-md-6 text-right">
+              <a title="Remove this topic" data-topic="{{id}}" class="btn btn-sm btn-danger remove-topic" href="#remove"><span data-topic="{{id}}" class="fa fa-times"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>

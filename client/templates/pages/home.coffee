@@ -7,5 +7,6 @@ Template.home.events
       doingTopic: null,
       doneTopics:[]
 
-    new_meeting._id = Meetings.insert(new_meeting)
-    Router.go 'meeting', new_meeting
+    new_meeting._id = Meteor.call 'newRandomMeeting', new_meeting, (error, response)->
+      Router.go 'meeting', _.extend(new_meeting, {_id: response})
+
