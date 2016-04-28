@@ -1,4 +1,4 @@
 # Distribean
 Lean Coffee for Distributed Teams
 
-[http://distribean.meteor.com](http://distribean.meteor.com)
+[https://distribean.herokuapp.com](https://distribean.herokuapp.com)
